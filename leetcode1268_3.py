@@ -11,10 +11,10 @@ class Solution:
         ret = []
         for i in range(len(searchWord)):
             key = searchWord[:i+1]
-            startIndex = self.binarySearch(products, key)
+            start_index = self.binarySearch(products, key)
             partial_ret, non_prefix_indices = self.linearSearch(products, key)
             ret.append(partial_ret)
-            non_prefix_index = [i for i in range(startIndex)] + non_prefix_indices
+            non_prefix_index = [i for i in range(start_index)] + non_prefix_indices
             products = self.removeNonCandidate(products, non_prefix_indices)
         return ret
 
