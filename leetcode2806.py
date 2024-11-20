@@ -7,8 +7,10 @@ class Solution:
         return balance - roundedAmount
 
     def rounding(self, amount):
-        remaining = amount % 10
-        ret = (amount // 10) * 10
-        if remaining >= 5:
+        remainder = amount % 10
+        quotient = amount // 10
+        ret = quotient * 10
+        if remainder >= 5:
             ret += 10
         return ret
+
